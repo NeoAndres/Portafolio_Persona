@@ -38,6 +38,13 @@ Con Python instalado, abre la terminal en esta carpeta y ejecuta `py -3 -m http.
 
 Los fondos actuales son imágenes de `assets/menus/`; los videos de la plantilla no estaban incluidos. Las animaciones, el cursor y el sonido del menú se conservan. El sonido se activa con el botón de altavoz.
 
+/=====================/
+    Pasos personales
+/=====================/
+
+1. `cd "C:\Users\andre\OneDrive\Documents\VsCodeProyects\Persona_Portfolio\Persona_Portfolio\Persona_style_portfolio-main"`
+2. `py -3 -m http.server 8000 --bind 127.0.0.1`
+
 ## Estructura
 
 - `index.html`: secciones y textos de navegación en español.
@@ -46,4 +53,3 @@ Los fondos actuales son imágenes de `assets/menus/`; los videos de la plantilla
 - `js/view.js`: presentación del contenido.
 - `js/controller.js`: navegación y sonido.
 
-Diseño base adaptado de Persona-Style Portfolio.
