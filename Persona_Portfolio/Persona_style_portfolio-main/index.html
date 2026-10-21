@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrés Barrera · Portafolio</title>
+<meta name="description" content="Portafolio de Andrés Barrera, estudiante de Ingeniería Informática en el Politécnico y trabajador independiente.">
+<link rel="stylesheet" href="css/style.css?v=andres-3">
+</head>
+<body data-screen="home">
+
+<!-- Background art layers -->
+<div id="bg" aria-hidden="true">
+  <div class="bg-layer" id="bg-stripes"></div>
+  <svg class="bg-star" style="left:6%;top:8%;width:26vmax;height:26vmax" viewBox="0 0 100 100">
+    <polygon points="50,0 60,35 98,35 68,57 78,94 50,72 22,94 32,57 2,35 40,35" fill="#000"/>
+  </svg>
+  <svg class="bg-star s2" style="right:4%;bottom:6%;width:34vmax;height:34vmax" viewBox="0 0 100 100">
+    <polygon points="50,0 60,35 98,35 68,57 78,94 50,72 22,94 32,57 2,35 40,35" fill="#fff"/>
+  </svg>
+  <!-- Per-screen menu artwork: assets/menus/<screen>.jpg
+       Each falls back to the CSS stripes if its file is missing -->
+  <img class="menu-art" id="art-home" src="assets/menus/home.jpg" alt=""
+       onload="document.body.classList.add('has-art-home')" onerror="this.remove()">
+
+  <img class="menu-art" id="art-skills" src="assets/menus/skills.jpg" alt=""
+       onload="document.body.classList.add('has-art-skills')" onerror="this.remove()">
+  <img class="menu-art" id="art-about" src="assets/menus/about.jpg" alt=""
+       onload="document.body.classList.add('has-art-about')" onerror="this.remove()">
+  <img class="menu-art" id="art-contact" src="assets/menus/contact.jpg" alt=""
+       onload="document.body.classList.add('has-art-contact')" onerror="this.remove()">
+  <div class="bg-layer" id="bg-halftone"></div>
+  <div class="bg-layer" id="bg-vignette"></div>
+</div>
+<div id="slash" aria-hidden="true"></div>
+
+<!-- Screen transition wipe -->
+<div id="wipe" aria-hidden="true">
+  <div class="pane p3"></div>
+  <div class="pane p2"></div>
+  <div class="pane p1"></div>
+  <div class="flash"></div>
+</div>
+
+<!-- Custom animated cursor + select sound -->
+<div id="cursor" aria-hidden="true"></div>
+<audio id="sfx-select" src="assets/sfx/select.mp3" preload="auto"></audio>
+<button id="audio-toggle" aria-label="Activar sonido" aria-pressed="false">🔇</button>
+
+
+
+
+<div id="shell">
+  <div id="hud-top">
+    <div class="hud-tag" id="profile-header">Portafolio // Andrés Barrera</div>
+    <div class="hud-tag alt" id="profile-role">Ingeniería Informática · Politécnico</div>
+  </div>
+  <main id="stage">
+    <section class="screen active" id="screen-home" aria-label="Inicio">
+      <div id="intro-eyebrow">Mi historia está en construcción</div>
+      <h1 id="big-name" aria-label="Andrés Barrera">
+        <span class="ransom" data-ransom="ANDRÉS" aria-hidden="true"></span>
+        <span class="ransom" data-ransom="BARRERA" aria-hidden="true"></span>
+      </h1>
+      <p id="tagline"></p>
+      <nav id="menu" aria-label="Secciones">
+        <button class="menu-item sel" data-target="projects" aria-label="Proyectos">
+          <span class="ransom" data-ransom="PROYECTOS" aria-hidden="true"></span><span class="cursor-mark" aria-hidden="true">◀</span>
+        </button>
+        <button class="menu-item" data-target="skills" aria-label="Enfoque">
+          <span class="ransom" data-ransom="ENFOQUE" aria-hidden="true"></span><span class="cursor-mark" aria-hidden="true">◀</span>
+        </button>
+        <button class="menu-item" data-target="about" aria-label="Sobre mí">
+          <span class="ransom" data-ransom="SOBRE MÍ" aria-hidden="true"></span><span class="cursor-mark" aria-hidden="true">◀</span>
+        </button>
+        <button class="menu-item" data-target="contact" aria-label="Contacto">
+          <span class="ransom" data-ransom="CONTACTO" aria-hidden="true"></span><span class="cursor-mark" aria-hidden="true">◀</span>
+        </button>
+      </nav>
+    </section>
+    <section class="screen sub" id="screen-projects" aria-label="Proyectos">
+      <h2 class="screen-head" aria-label="Proyectos"><span class="ransom" data-ransom="PROYECTOS" aria-hidden="true"></span></h2>
+      <button class="back-hint" data-back>ESC · Volver</button>
+      <p class="section-intro">Mi primer proyecto web y el camino que estoy construyendo.</p>
+      <div class="grid-label"><span class="bar"></span>Mi primer proyecto</div>
+      <div id="projects-empty" class="paper empty-state">
+        <span class="stamp">Próximo capítulo</span>
+        <h3>Mis proyectos empiezan aquí.</h3>
+        <p>Este espacio irá creciendo con mis trabajos de clase y mis iniciativas personales.</p>
+      </div>
+      <div id="feat-grid" class="grid"></div>
+      <div id="repo-status" role="status"></div>
+      <div id="repo-grid" class="grid"></div>
+      <div class="grid-label"><span class="bar"></span>Mi camino</div>
+      <div id="journey-grid" class="grid"></div>
+    </section>
+    <section class="screen sub" id="screen-skills" aria-label="Enfoque">
+      <h2 class="screen-head" aria-label="Enfoque"><span class="ransom" data-ransom="ENFOQUE" aria-hidden="true"></span></h2>
+      <button class="back-hint" data-back>ESC · Volver</button>
+      <p class="section-intro">Formación, trabajo y un espacio para lo que viene.</p>
+      <div id="skills-body" class="focus-grid"></div>
+      <div class="paper focus-note"><p>Mi lista de habilidades irá creciendo junto con mi experiencia y mis proyectos.</p></div>
+    </section>
+    <section class="screen sub align-right" id="screen-about" aria-label="Sobre mí">
+      <div class="section-heading">
+        <h2 class="screen-head" aria-label="Sobre mí"><span class="ransom" data-ransom="SOBRE MÍ" aria-hidden="true"></span></h2>
+        <button class="back-hint" data-back>ESC · Volver</button>
+      </div>
+      <div class="paper profile-paper">
+        <figure class="profile-photo" id="profile-photo-frame" hidden>
+          <img id="profile-photo" width="413" height="579" loading="lazy" decoding="async" alt="Retrato de Andrés Barrera">
+          <figcaption id="profile-photo-caption">Andrés Barrera</figcaption>
+        </figure>
+        <div class="profile-monogram" id="profile-monogram" aria-hidden="true">AB</div>
+        <div class="profile-kicker">Detrás del portafolio</div>
+        <h3 id="about-name">Andrés Barrera</h3>
+        <div id="about-copy"></div>
+        <div class="about-quote">Un espacio que crece conmigo.</div>
+        <div class="profile-actions" id="cv-actions" hidden>
+          <a class="cv-btn" id="cv-view" href="assets/cv/CV_SantiagoAndresBarreraAyala.pdf" target="_blank" rel="noopener noreferrer"><span>Ver hoja de vida ↗</span></a>
+          <a class="cv-btn" id="cv-download" href="assets/cv/CV_SantiagoAndresBarreraAyala.pdf" download="Hoja_de_vida_Andres_Barrera.pdf"><span>Descargar PDF ↓</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="screen sub align-right" id="screen-contact" aria-label="Contacto">
+      <div class="section-heading">
+        <h2 class="screen-head" aria-label="Contacto"><span class="ransom" data-ransom="CONTACTO" aria-hidden="true"></span></h2>
+        <button class="back-hint" data-back>ESC · Volver</button>
+      </div>
+      <div class="paper contact-paper">
+        <span class="stamp">Sigamos en contacto</span>
+        <h3>Este también es un punto de encuentro.</h3>
+        <p id="contact-copy"></p>
+        <p id="contact-pending">Mis canales de contacto estarán disponibles próximamente.</p>
+      </div>
+      <div id="contact-links" class="contact-list"></div>
+    </section>
+  </main>
+  <div id="hud-bottom">
+    <span><span class="key">↑↓</span>Elegir</span>
+    <span><span class="key">Enter</span>Abrir</span>
+    <span><span class="key">Esc</span>Volver</span>
+    <span id="clock"></span>
+  </div>
+</div>
+<script src="js/model.js?v=dragons-1" defer></script>
+<script src="js/view.js?v=dragons-1" defer></script>
+<script src="js/controller.js?v=andres-3" defer></script>
+</body>
+</html>
