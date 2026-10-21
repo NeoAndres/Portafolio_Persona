@@ -53,3 +53,6 @@ Los fondos actuales son imágenes de `assets/menus/`; los videos de la plantilla
 - `js/view.js`: presentación del contenido.
 - `js/controller.js`: navegación y sonido.
 
+## Link
+
+https://neoandres.github.io/Portafolio_Persona/
